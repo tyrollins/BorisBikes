@@ -19,6 +19,14 @@ module BikeContainer
     bikes << bike if bike.instance_of?(Bike)
   end
 
+  def put_in(bikes)
+    bikes.each {|bike| dock(bike)}
+  end
+
+  def take_out(bikes)
+    bikes.each {|bike| release(bike)}
+  end
+
   def release(bike)
     raise "No bikes available." if empty?
     bikes.delete(bike) if bike.instance_of?(Bike)
