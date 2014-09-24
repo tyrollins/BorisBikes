@@ -12,15 +12,15 @@ describe BikeContainer do
   let(:holder) {ContainerHolder.new}
 
   it 'should be able to accept bike' do
-    expect(holder.bike_count).to eq(0)
+    expect(holder.bikes.count).to eq(0)
     holder.dock(bike)
-    expect(holder.bike_count).to eq(1)
+    expect(holder.bikes.count).to eq(1)
   end
 
   it 'should be able to release bike' do
     holder.dock(bike)
     holder.release(bike)
-    expect(holder.bike_count).to eq(0)
+    expect(holder.bikes.count).to eq(0)
   end
 
   it 'should know when it is full' do
@@ -42,4 +42,15 @@ describe BikeContainer do
     expect(holder.available_bikes).to eq([working_bike])
   end
 
+  it "should not realease bike if  empty" do
+    expect(lambda {holder.release(bike)}).to raise_error(RuntimeError)
+  end
+
+  it "should provide the list of broken bikes" do
+    working_bike, broken_bike = Bike.new, Bike.new
+    broken_bike.break!
+    holder.dock(working_bike)
+    holder.dock(broken_bike)
+    expect(holder.broken_bikes).to eq([broken_bike])
+  end
 end
