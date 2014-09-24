@@ -24,4 +24,13 @@ describe DockingStation do
     expect(station.bikes.count).to eq(1)
   end
 
+  it "should only accept fixed bikes from van" do
+    test_bikes
+    van.dock(@working_bike)
+    van.dock(@broken_bike)
+    station.release_broken(van)
+    expect(van.bikes).to eq([@broken_bike])
+    expect(station.bikes.count).to eq(1)
+  end
+
 end
