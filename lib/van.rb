@@ -1,4 +1,4 @@
-require_relative 'bike_container'
+require 'bike_container'
 
 class Van
 
