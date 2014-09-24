@@ -1,7 +1,6 @@
-require './lib/docking_station'
 require './lib/van'
 require './lib/garage'
-require './lib/bike'
+
 
 describe Garage do
 

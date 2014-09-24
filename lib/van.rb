@@ -19,7 +19,7 @@ class Van
   end
 
   def accept_fixed(garage)
-    self.put_in(available_bikes)
+    self.put_in(garage.available_bikes)
     garage.take_out(available_bikes)
   end
 
