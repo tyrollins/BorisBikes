@@ -9,8 +9,23 @@ class Van
   end
 
   def accept_broken(station)
-    put_in(station.broken_bikes)
+    self.put_in(station.broken_bikes)
     station.take_out(broken_bikes)
+  end
+
+  def release_broken(garage)
+    garage.put_in(broken_bikes)
+    self.take_out(broken_bikes)
+  end
+
+  def accept_fixed(garage)
+    self.put_in(available_bikes)
+    garage.take_out(available_bikes)
+  end
+
+  def release_fixed(station)
+    station.put_in(available_bikes)
+    self.take_out(available_bikes)
   end
 
 end

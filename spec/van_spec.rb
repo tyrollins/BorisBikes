@@ -20,4 +20,6 @@ describe Van do
     expect(van.bikes).to eq([broken_bike])
     expect(station.bikes.count).to eq(1)
   end
+
+ # it "should not accept more than 10 bikes"
 end
