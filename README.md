@@ -1,13 +1,13 @@
 Boris Bikes [![Code Climate](https://codeclimate.com/github/stoked/BorisBikes/badges/gpa.svg)](https://codeclimate.com/github/stoked/BorisBikes)
 ---
-For this project we were tasked with replicating the functionality of London's famous Boris Bikes initiative. The goal was to introduce students to Object-Oriented-Programming & Design while using Test-Driven-Development with RSpec. In this Boris Bikes project users are able to rent and dock ````bikes```` with the ````docking station````. A ````bike```` can break, in which case it is picked up by the ````van```` and transfered to the ````garage````for repair. Once the repair is complete the ````bike```` is collected and dropped back at the ````docking station````.
+For this project we were tasked with replicating the functionality of London's famous Boris Bikes initiative. The goal was to introduce students to Object-Oriented Programming & Design while using Test-Driven Development with RSpec. In this Boris Bikes project users are able to rent and dock ````bikes```` with the ````docking station````. A ````bike```` can break, in which case it is picked up by the ````van```` and transfered to the ````garage````for repair. Once the repair is complete the ````bike```` is collected and dropped back at the ````docking station````.
 
 ### Technologies
 * Ruby
-* Test-Driven-Development with RSpec
+* Test-Driven Development with RSpec
 * Git Version Control
-* Object-Oriented-Programming
-* Object-Oriented-Design
+* Object-Oriented Programming
+* Object-Oriented Design
 * CRC (class-responsibility-collaboration) cards
 
 ### Example
