@@ -14,22 +14,22 @@ module BikeContainer
     @capacity = value
   end
 
-  def dock(bike)
+  def dock bike
     raise "Station is full." if full?
-    bikes << bike if bike.instance_of?(Bike)
+    bikes << bike if bike.instance_of? Bike
   end
 
-  def put_in(bikes)
-    bikes.each {|bike| dock(bike)}
+  def put_in bikes
+    bikes.each {|bike| dock bike}
   end
 
-  def take_out(bikes)
-    bikes.each {|bike| release(bike)}
+  def take_out bikes
+    bikes.each {|bike| release bike}
   end
 
-  def release(bike)
+  def release bike
     raise "No bikes available." if empty?
-    bikes.delete(bike) if bike.instance_of?(Bike)
+    bikes.delete bike if bike.instance_of? Bike
   end
 
   def empty?
@@ -41,11 +41,11 @@ module BikeContainer
   end
 
   def available_bikes
-    bikes.reject(&:broken?)
+    bikes.reject &:broken?
   end
 
   def broken_bikes
-    bikes.select(&:broken?)
+    bikes.select &:broken?
   end
 
 end
